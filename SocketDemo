@@ -1,0 +1,166 @@
+//
+//  ClientViewController.m
+//  SocketDemo
+//
+//  Created by sanyue on 14-7-24.
+//  Copyright (c) 2014年 范腾飞. All rights reserved.
+//
+
+#import "ClientViewController.h"
+
+@interface ClientViewController ()
+
+@end
+
+@implementation ClientViewController {
+
+    UIAlertView *alert;
+    NSMutableArray *connecteSocets;
+
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    
+    UIGestureRecognizer *pangesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideBorder)];
+
+    [self.view addGestureRecognizer:pangesture];
+    [pangesture setDelegate:self];
+    
+    
+    [asyncSocket setDelegate:self];
+  //  [udpSocket setDelegate:self];
+    
+    asyncSocket = [[AsyncSocket alloc] initWithDelegate:self];
+    connecteSocets = [NSMutableArray new];
+  //  udpSocket  = [[AsyncUdpSocket alloc] initWithDelegate:self];
+    ///[udpSocket receiveWithTimeout:-1 tag:0];
+    
+
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self listenPort];
+}
+
+
+#pragma mark - 在服务器端要侦听端口，用到此方法
+-(void)listenPort
+{
+    NSError *err;
+    if([asyncSocket acceptOnPort:8088 error:&err]) {
+        
+        [_Msgs setText:@"start acceptPort:8088"];
+    
+    }else {
+        [_Msgs setText:[NSString stringWithFormat:@"%@",err]];
+    }
+}
+
+
+-(void) hideBorder {
+    
+    [_port resignFirstResponder];
+    [_ip resignFirstResponder];
+    [_sendMsg resignFirstResponder];
+    [_Msgs resignFirstResponder];
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+-(IBAction)sendMsg:(id)sender {
+    
+    NSData *sendData = [_sendMsg.text dataUsingEncoding:NSUTF8StringEncoding];
+    [[connecteSocets objectAtIndex:0] writeData:sendData withTimeout:-1 tag:0];
+    
+//    [udpSocket sendData:sendData toHost:_ip.text port:[_port.text intValue] withTimeout:-1 tag:0];
+//    
+//    [_Msgs setText:[NSString stringWithFormat:@"%@\nSent:%@",_Msgs.text,_sendMsg.text]];
+}
+
+-(IBAction)requestHost:(id)sender{
+    
+    NSError *error = nil;
+    
+    if(![asyncSocket connectToHost:_ip.text onPort:[_port.text intValue] error:&error]) {
+        
+        [_Msgs setText:[NSString stringWithFormat:@"%@",error]];
+        
+    } else {
+        
+        [_Msgs setText:@"建立链接成功！"];
+    }
+    
+}
+
+
+#pragma mark -
+#pragma mark ASyncSocketDelegate
+
+- (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
+    
+    NSLog(@"thread(%@),onSocket:%p didWiriteDataWithTag:%li",[[NSThread currentThread] name],asyncSocket,tag);
+    
+    [_Msgs setText:[NSString stringWithFormat:@"%@\nSent:%@",_Msgs.text,_sendMsg.text]];
+    
+    [sock readDataWithTimeout:-1 tag:0];
+
+}
+
+-(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+
+    NSString *aStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    [_Msgs setText:[NSString stringWithFormat:@"%@\nReceive:%@",_Msgs.text,aStr]];
+    
+    [sock readDataWithTimeout:-1 tag:0];
+}
+
+- (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err
+{
+	NSLog(@"error");
+}
+
+-(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket {
+   
+    [connecteSocets addObject:newSocket];
+}
+
+-(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
+    [_Msgs setText:[NSString stringWithFormat:@"%@\n%@请求服务器",_Msgs.text,host
+                    ]];
+    NSData *data = [@"已连接到服务器" dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [sock writeData:data withTimeout:-1 tag:0];
+}
+
+
+#pragma mark -
+#pragma mark AsyncUdpSocketDelegate
+
+-(BOOL)onUdpSocket:(AsyncUdpSocket *)sock didReceiveData:(NSData *)data withTag:(long)tag fromHost:(NSString *)host port:(UInt16)port {
+
+    [_Msgs setText:[NSString stringWithFormat:@"%@\nReceive:%@",_Msgs.text,[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]]];
+    
+    [udpSocket receiveWithTimeout:-1 tag:0];
+    
+    return YES;
+}
+
+@end
