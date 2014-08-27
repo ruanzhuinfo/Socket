@@ -1,0 +1,66 @@
+[ 2014-08-19T09:02:30+08:00 ] 192.168.2.3 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.010819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010946s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.073174s ]
+INFO: [ view_template ] --END-- [ RunTime:0.027739s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.100956s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.190591s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.291564s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.314606s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.317968s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.326707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.041747s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.333374s ]
+INFO: [ view_end ] --END-- [ RunTime:0.007258s ]
+
+[ 2014-08-19T09:02:54+08:00 ] 192.168.2.3 /index.php/Personal/Index/tie
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000938s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.026508s ]
+INFO: [ view_template ] --END-- [ RunTime:0.027986s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.054577s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006394s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.060976s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.061159s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.061311s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.061407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000646s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.061660s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000338s ]
+
+[ 2014-08-19T09:02:57+08:00 ] 192.168.2.3 /index.php/index/index/about
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.000337s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.000874s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000201s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.001098s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049051s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.050164s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.050365s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.050507s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.050599s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000686s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.050890s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000326s ]
+

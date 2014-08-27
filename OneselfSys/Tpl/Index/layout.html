@@ -1,0 +1,36 @@
+<include file="./Public/html/head.html" />
+<div id="content" style="margin-top:70px;">
+	<div style="padding-top:1px;">
+		<include file="./Public/filem/index.html" />
+	</div>
+	<div id="index">
+		<div class="span2 l_menu" style="margin:0;padding-top:5px;">
+			<div class="div-img">
+				<center><a target='_blank' href="__APP__/Personal/Index/tie">
+					<img width=85% src="__PUBLIC__/images/default1.png" class="img-polaroid" style="width:85%;"></a>
+				</center>
+			</div>
+			<div style="margin-top:10px;">
+			<a class="l_nav" href="__ROOT__/Index.php">&emsp;<i class="icon-home"></i>&nbsp;首页</a>
+			<a class="l_nav" href="{:U('Index/Index/shuo')}">&emsp;<i class="icon-list-alt"></i>&nbsp;说吧</a>
+			<a class="l_nav blog_nav" href="{:U('Index/Index/blog')}">&emsp;<i class="icon-pencil"></i>&nbsp;博客&emsp;
+				<font class="sub_nav" style="display:none;color:#0088CC;" onclick="window.open('{:U('Index/index/AddBlog')}');">写博客</font>
+			</a>
+			<a class="l_nav" href="{:U('Index/Index/leave_word')}">&emsp;<i class="icon-envelope"></i>&nbsp;留言</a>
+			<a class="l_nav" href="{:U('Index/Index/about')}">&emsp;<i class=" icon-map-marker"></i>&nbsp;关于</a>
+			</div>
+			<div style="border-top:1px solid #CFEBF5;width:80%;margin:20px auto;padding-top:10px;">
+				<a class="l_nav y_nav" target="_blank" href="http://www.marchsoft.cn/"><i class="icon-share-alt"></i>&nbsp;三月软件</a>
+				<a class="l_nav y_nav" target="_blank" href="http://www.cnblogs.com/"><i class="icon-share-alt"></i>&nbsp;博客园</a>
+				<a class="l_nav y_nav" target="_blank" href="http://weibo.com/"><i class="icon-share-alt"></i>&nbsp;新浪微博</a>
+				<a class="l_nav y_nav" target="_blank" href="http://t.qq.com/"><i class="icon-share-alt"></i>&nbsp;腾讯微博</a>
+			</div>
+		</div>
+		<div id='index-cnt' class="span8" style="width:634px;margin:0;border:1px solid #CFEBF5;margin-top:5px;
+	min-height:600px;padding-left:20px;background-color:#fff;margin-bottom:5px;overflow:hidden;">
+			{__CONTENT__}
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+<include file ="./Public/html/foot.html" />
+<script style="text/javascript" src="__PUBLIC__/js/index.js"></script>

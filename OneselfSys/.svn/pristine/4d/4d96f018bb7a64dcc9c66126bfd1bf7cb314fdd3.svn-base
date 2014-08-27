@@ -1,0 +1,1 @@
+<title>主页-<?php echo $title; ?></title>

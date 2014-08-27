@@ -1,0 +1,24 @@
+<title>博客-<php> echo $title;</php></title>
+<div id='blog'>
+	<div class='blog-nav'>
+		<div class='blog-nav-sub'>
+			<p class='big-title'>技术博客</p>
+			<p>简介：这里，是我们知识的储备区；这里，是我们技术的诞生地！</p>
+			<div class='search-nav'>
+				<span class="selected-nav-tie nav-tie">全部</span>
+				<span class='nav-tie'>WEB</span>
+				<span class='nav-tie'>LINUX</span>
+				<span class='nav-tie'>JAVA</span>
+				<span class='nav-tie'>.NET</span>
+				<span class='nav-tie'>其它</span>
+				<button class='btn btn-info btn-publish' style='*margin-top:1px;font-size:12px;'>我要发帖</button>
+		  		<div class="search-title input-append">
+				  <input class="span2" id="appendedInput" placeholder='搜索标题' type="text">
+				  <span class="add-on ico-search"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<span style='display:block;color:#999;line-height:10px;'>共0个博客</span>
+	
+</div>

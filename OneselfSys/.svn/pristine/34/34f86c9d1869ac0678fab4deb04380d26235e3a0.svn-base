@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>jquery新浪微博表情插件 - 站长素材</title>
+	<link rel="stylesheet" type="text/css" href="jquery.sinaEmotion.css" />
+	<style type="text/css">
+		h1 {
+			font: 16px '微软雅黑';
+			color: #0000ff;
+		}
+		body{
+			font-size:13px;
+		}
+		#face:hover{cursor:pointer;}
+		#emotions{margin-top:30px;}
+	</style>
+</head>
+<body>
+
+    <div id="content">
+	
+<br><br><br>
+<!--DEMO start-->
+<div style="width:450px; height:auto; margin:100px auto;">
+	<!-- <div id="out" style="height:auto; width: 400px; border: 1px dashed #000000; padding: 10px;"></div> -->
+	<textarea class="emotion" cols="58" rows="5" style="resize:none;font-size: 12px;"></textarea>
+	<br />
+	<img id="face" type="button" src="look.png"/>
+	<!-- <input id="analytic" type="button" value="解析" onClick="out()" />
+	<br /> -->
+	
+</div>	
+	<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="jquery.sinaEmotion.js"></script>
+	<script type="text/javascript">
+		// 绑定表情
+		$('#face').SinaEmotion($('.emotion'));
+		// 测试本地解析
+		function out() {
+			var inputText = $('.emotion').val();
+			$('#out').html(AnalyticEmotion(inputText));
+		}
+	</script>
+<!--DEMO end-->
+	</div>
+</body>
+</html>

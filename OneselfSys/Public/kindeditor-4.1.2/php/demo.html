@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="__PUBLIC__/kindeditor-4.1.2/themes/default/default.css" />
+<link rel="stylesheet" href="__PUBLIC__/kindeditor-4.1.2/plugins/code/prettify.css" />
+<script charset="utf-8" src="__PUBLIC__/kindeditor-4.1.2/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor-4.1.2/lang/zh_CN.js"></script>
+<script charset="utf-8" src="__PUBLIC__/kindeditor-4.1.2/plugins/code/prettify.js"></script>
+<script>
+	KindEditor.ready(function(K) {
+		var editor1 = K.create('textarea[name="content1"]', {
+			cssPath : '__PUBLIC__/kindeditor-4.1.2/plugins/code/prettify.css',
+			uploadJson : '__PUBLIC__/kindeditor-4.1.2/php/upload_json.php',
+			fileManagerJson : '__PUBLIC__/kindeditor-4.1.2/php/file_manager_json.php',
+			allowFileManager : true,
+			afterCreate : function() {
+				var self = this;
+				K.ctrl(document, 13, function() {
+					self.sync();
+					K('form[name=example]')[0].submit();
+				});
+				K.ctrl(self.edit.doc, 13, function() {
+					self.sync();
+					K('form[name=example]')[0].submit();
+				});
+			}
+		});
+		prettyPrint();
+	});
+</script>
+<textarea name="content1" style="width:100%;min-height:500px;visibility:hidden;"></textarea>
+
+

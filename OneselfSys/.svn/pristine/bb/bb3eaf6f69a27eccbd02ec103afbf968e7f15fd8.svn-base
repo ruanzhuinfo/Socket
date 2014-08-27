@@ -1,0 +1,24 @@
+<title>修改头像-<?php echo $title; ?></title>
+<div id='upd-pto'>
+	<div class='div-img'>
+		<div class=''>
+			<img src='__PUBLIC__/images/11.jpg'>
+		</div>
+	</div>
+	<div class='sel-border'>
+		<div class='sel-file'>
+			<form>
+				<input type='text' class='span2' id='url_img'>
+				<div id='div-file'><input type='file' id='file-img' onchange="url_img.value=this.value;alert(url_img.value);"></div>
+				<button class='yulan'>预览</button>
+				<button class='baocun' >保存</button>
+			</form>
+		</div>
+		<div class='sel-warp'>
+			<span class='warp-title'>从电脑中选择您喜欢的头像：</span>
+			<span>请选择jpg、gif格式，小于2M的图片（使用高质量图片，可生成高清头像）</span>
+		</div>
+		<div class='clear'></div>
+	</div>
+</div>
+<div class='clear'></div>

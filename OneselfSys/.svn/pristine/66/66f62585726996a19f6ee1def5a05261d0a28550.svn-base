@@ -1,0 +1,11 @@
+<LINK href="__PUBLIC__/filem/css/style.css" type='text/css' rel='stylesheet'>
+<SCRIPT src="__PUBLIC__/filem/js/js.js" type='text/javascript'></SCRIPT>
+<DIV id='imgPlay'>
+	<UL class='imgs' id='actor'>
+	  <LI><A href="#"><IMG src="__PUBLIC__/filem/images/01.jpg"></A></LI>
+	  <LI><A href="#"><IMG src="__PUBLIC__/filem/images/02.jpg"></A></LI>
+	  <LI><A href="#"><IMG src="__PUBLIC__/filem/images/03.jpg"></A></LI>
+	  <LI><A href="#"><IMG src="__PUBLIC__/filem/images/04.jpg"></A></LI>
+	</UL>
+<DIV class='num' id="numInner"></DIV>
+</DIV>

@@ -1,0 +1,43 @@
+[ 2014-08-27T19:56:17+08:00 ] 172.16.21.2 /
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.010876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010965s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.039748s ]
+INFO: [ view_template ] --END-- [ RunTime:0.027959s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.067731s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.187308s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.255057s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.264586s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.268162s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.276790s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.028420s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.283520s ]
+INFO: [ view_end ] --END-- [ RunTime:0.007186s ]
+
+[ 2014-08-27T19:56:21+08:00 ] 172.16.21.2 /index.php/Personal/Index/tie
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.024400s ]
+INFO: [ route_check ] --END-- [ RunTime:0.024454s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:-0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:-0.018077s ]
+INFO: [ view_template ] --END-- [ RunTime:0.027952s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:-0.046059s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050346s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:-0.096429s ]
+INFO: Run TokenBuild Behavior [ RunTime:-0.096649s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:-0.096843s ]
+INFO: Run ShowRuntime Behavior [ RunTime:-0.096953s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000744s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:-0.097204s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000282s ]
+
